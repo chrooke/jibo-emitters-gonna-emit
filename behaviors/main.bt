@@ -1,0 +1,237 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "asset-pack": "core",
+        "children": [
+            "b6723d19-65db-402c-a26d-c7ab3da9f636",
+            "ef7cbaa0-dc84-406b-8eec-088db30942cc",
+            "23bb41c0-11d8-469b-b842-b8c3cc3e6bbf",
+            "bd729d2d-21a6-4050-9dad-1248643d851d"
+        ],
+        "decorators": [],
+        "options": {}
+    },
+    "meta": {
+        "version": 1
+    },
+    "bd729d2d-21a6-4050-9dad-1248643d851d": {
+        "id": "bd729d2d-21a6-4050-9dad-1248643d851d",
+        "class": "Parallel",
+        "name": "Sending the event from within included .js",
+        "options": {
+            "succeedOnOne": false
+        },
+        "asset-pack": "core",
+        "parent": 1,
+        "children": [
+            "64d83160-8f3b-4747-aaa1-e5c085272491",
+            "52494f18-4af5-4d47-b058-14d6b4489d1f"
+        ]
+    },
+    "f39d7d05-cc50-4930-b94e-20899c6ae7de": {
+        "id": "f39d7d05-cc50-4930-b94e-20899c6ae7de",
+        "class": "ExecuteScript",
+        "name": "",
+        "options": {
+            "exec": [
+                "() => {",
+                "  \"use strict\";",
+                "  let custom=require('../src/custom');",
+                "  notepad.custom = new custom({",
+                "    emitter: this.emitter",
+                "  });",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "64d83160-8f3b-4747-aaa1-e5c085272491"
+    },
+    "ef7cbaa0-dc84-406b-8eec-088db30942cc": {
+        "id": "ef7cbaa0-dc84-406b-8eec-088db30942cc",
+        "class": "TimeoutJs",
+        "name": "",
+        "options": {
+            "getTime": [
+                "() => {",
+                "    return 1000;",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    },
+    "64d83160-8f3b-4747-aaa1-e5c085272491": {
+        "id": "64d83160-8f3b-4747-aaa1-e5c085272491",
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "asset-pack": "core",
+        "parent": "bd729d2d-21a6-4050-9dad-1248643d851d",
+        "children": [
+            "f39d7d05-cc50-4930-b94e-20899c6ae7de",
+            "f654486d-7382-4b39-a916-bf1cdbc08364",
+            "49777cd7-3a9a-493a-b618-adc420f4201c"
+        ]
+    },
+    "f654486d-7382-4b39-a916-bf1cdbc08364": {
+        "id": "f654486d-7382-4b39-a916-bf1cdbc08364",
+        "class": "TimeoutJs",
+        "name": "",
+        "options": {
+            "getTime": [
+                "() => {",
+                "    return 1000;",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "64d83160-8f3b-4747-aaa1-e5c085272491"
+    },
+    "23bb41c0-11d8-469b-b842-b8c3cc3e6bbf": {
+        "id": "23bb41c0-11d8-469b-b842-b8c3cc3e6bbf",
+        "class": "Parallel",
+        "name": "Sending the event from within the bt",
+        "options": {
+            "succeedOnOne": false
+        },
+        "asset-pack": "core",
+        "parent": 1,
+        "children": [
+            "69cb7150-0017-415a-b553-1e149f5dde65",
+            "ceaf6b02-93f5-4d19-8cbc-ecc6cac7c782"
+        ]
+    },
+    "69cb7150-0017-415a-b553-1e149f5dde65": {
+        "id": "69cb7150-0017-415a-b553-1e149f5dde65",
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "asset-pack": "core",
+        "parent": "23bb41c0-11d8-469b-b842-b8c3cc3e6bbf",
+        "children": [
+            "e3b792ab-e4ff-4ae0-b880-850c56221f7c",
+            "ba2c33df-99db-41aa-a14a-fc63c2aaac7f"
+        ]
+    },
+    "ba2c33df-99db-41aa-a14a-fc63c2aaac7f": {
+        "id": "ba2c33df-99db-41aa-a14a-fc63c2aaac7f",
+        "class": "ExecuteScript",
+        "name": "",
+        "options": {
+            "exec": [
+                "() => {",
+                "  console.log('Emitting event1');",
+                "  emitter.emit('event1','main.bt');",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "69cb7150-0017-415a-b553-1e149f5dde65"
+    },
+    "e3b792ab-e4ff-4ae0-b880-850c56221f7c": {
+        "id": "e3b792ab-e4ff-4ae0-b880-850c56221f7c",
+        "class": "TimeoutJs",
+        "name": "",
+        "options": {
+            "getTime": [
+                "() => {",
+                "    return 1000;",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "69cb7150-0017-415a-b553-1e149f5dde65"
+    },
+    "49777cd7-3a9a-493a-b618-adc420f4201c": {
+        "id": "49777cd7-3a9a-493a-b618-adc420f4201c",
+        "class": "ExecuteScript",
+        "name": "",
+        "options": {
+            "exec": [
+                "() => {",
+                "  notepad.custom.go();",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "64d83160-8f3b-4747-aaa1-e5c085272491"
+    },
+    "52494f18-4af5-4d47-b058-14d6b4489d1f": {
+        "id": "52494f18-4af5-4d47-b058-14d6b4489d1f",
+        "class": "TextToSpeech",
+        "name": "",
+        "options": {
+            "words": "Now for an event for something else, unless we're done.",
+            "onWord": [
+                "(word) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "bd729d2d-21a6-4050-9dad-1248643d851d",
+        "decorators": [
+            "e9737648-120e-4fe1-b2f1-12469fb6bc21"
+        ]
+    },
+    "e9737648-120e-4fe1-b2f1-12469fb6bc21": {
+        "id": "e9737648-120e-4fe1-b2f1-12469fb6bc21",
+        "class": "StartOnEvent",
+        "name": "",
+        "options": {
+            "eventName": "event1",
+            "onEvent": [
+                "(source) => {",
+                "  console.log('Received event 1 from ',source);",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "48b08d76-fc07-41d9-86ae-fadb97a550a6": {
+        "id": "48b08d76-fc07-41d9-86ae-fadb97a550a6",
+        "class": "StartOnEvent",
+        "name": "",
+        "options": {
+            "eventName": "event1",
+            "onEvent": [
+                "(source) => {",
+                "  console.log('Received event 1 from ',source);",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "ceaf6b02-93f5-4d19-8cbc-ecc6cac7c782": {
+        "id": "ceaf6b02-93f5-4d19-8cbc-ecc6cac7c782",
+        "class": "TextToSpeech",
+        "name": "",
+        "options": {
+            "words": "Now for an event from an included module.",
+            "onWord": [
+                "(word) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "23bb41c0-11d8-469b-b842-b8c3cc3e6bbf",
+        "decorators": [
+            "48b08d76-fc07-41d9-86ae-fadb97a550a6"
+        ]
+    },
+    "b6723d19-65db-402c-a26d-c7ab3da9f636": {
+        "id": "b6723d19-65db-402c-a26d-c7ab3da9f636",
+        "class": "TextToSpeech",
+        "name": "",
+        "options": {
+            "words": "Starting with an event from main.bt.",
+            "onWord": [
+                "(word) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    }
+}
