@@ -1,6 +1,6 @@
 {
   "name": "jibo-emitters-gonna-emit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "index.html",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "behaviorify": "^1.0.0",
-    "jibo": "^2.0.0"
+    "jibo": "^3.0.0"
   },
   "license": "UNLICENSED"
 }
